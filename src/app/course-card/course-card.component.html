@@ -10,4 +10,12 @@
         {{ curso.longDescription }}
     </div>
 
+    <!-- 
+        eventos nativos de navegador propagan el evento (bubble) ej: (click)
+        eventos personalizados no propagan nada ej: onCourseViewed
+        <button (click)="onClick()">evento click (bubble)</button>
+    -->
+    
+    <button (click)="onCourseViewed()">Ver curso (evento custom)</button>
+
 </div>

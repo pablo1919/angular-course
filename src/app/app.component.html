@@ -8,9 +8,10 @@
 
 <div class="courses">
 
-    <course-card [curso]="angularCore"></course-card>
-    <course-card [curso]="rxjs"></course-card>
-    <course-card [curso]="ngrx"></course-card>
+    <!--<course-card (click)="onClick()" [curso]="angularCore"></course-card>-->
+    <course-card (courseSelected)="onCourseSelected($event)" [curso]="angularCore"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [curso]="rxjs"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [curso]="ngrx"></course-card>
 
 </div>
 

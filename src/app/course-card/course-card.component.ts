@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../model/course';
 
 @Component({
@@ -9,5 +9,17 @@ import { Course } from '../model/course';
 export class CourseCardComponent {
   @Input({required: true})
   curso: Course
+
+  @Output('courseSelected') /** este es el nombre del evento custom del componente que recibe los datos emitidos acá */
+  courseEmitter = new EventEmitter<Course>()
+
+  onClick(): void{
+    console.log("course-card verCurso ")
+  }
+
+  onCourseViewed(){
+    console.log("course-card onCourseViewed ")
+    this.courseEmitter.emit(this.curso)
+  }
 
 }
