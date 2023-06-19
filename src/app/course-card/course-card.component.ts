@@ -10,6 +10,9 @@ export class CourseCardComponent {
   @Input({required: true})
   curso: Course
 
+  @Input()
+  cardIndex: number
+
   @Output('courseSelected') /** este es el nombre del evento custom del componente que recibe los datos emitidos acá */
   courseEmitter = new EventEmitter<Course>()
 

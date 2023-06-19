@@ -8,10 +8,26 @@
 
 <div class="courses">
 
-    <!--<course-card (click)="onClick()" [curso]="angularCore"></course-card>-->
+    <!--<course-card (click)="onClick()" [curso]="angularCore"></course-card>
     <course-card (courseSelected)="onCourseSelected($event)" [curso]="angularCore"></course-card>
     <course-card (courseSelected)="onCourseSelected($event)" [curso]="rxjs"></course-card>
-    <course-card (courseSelected)="onCourseSelected($event)" [curso]="ngrx"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [curso]="ngrx"></course-card>-->
+
+    <course-card
+     *ngFor="let curso of cursos;
+        index as i;
+        first as esPrimero;
+        last as esUltimo;
+        even as esPar;
+        odd as esImpar;"
+     [curso]="curso"
+     [cardIndex]="i+1"
+     [class.is-first]="esPrimero"
+     [class.is-odd]="esImpar"
+     [class.is-even]="esPar"
+     [class.is-last]="esUltimo"
+     (courseSelected)="onCourseSelected($event)">
+    </course-card>
 
 </div>
 
