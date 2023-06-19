@@ -25,4 +25,11 @@ export class CourseCardComponent {
     this.courseEmitter.emit(this.curso)
   }
 
+  /** Devuelve la clase a aplicar en ngClass */
+  esPrincipiante(){
+    if(this.curso.category == 'BEGINNER'){
+      return ['principiante']
+    }
+  }
+
 }

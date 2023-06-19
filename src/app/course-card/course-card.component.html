@@ -1,10 +1,14 @@
-<div class="course-card">
+<div class="course-card" [ngClass]="esPrincipiante()">
 
     <div class="course-title">
         {{ cardIndex + ' ' + curso.description }}
     </div>
-    <img width="300" alt="Angular Logo"
+    <img width="300" alt="Angular Logo" *ngIf="curso.iconUrl else noImg;"
          [src]="curso.iconUrl">
+
+    <ng-template #noImg>
+        <p>No hay imagen</p>
+    </ng-template>
 
     <div class="course-description">
         {{ curso.longDescription }}
@@ -16,6 +20,6 @@
         <button (click)="onClick()">evento click (bubble)</button>
     -->
     
-    <button (click)="onCourseViewed()">Ver curso (evento custom)</button>
+    <button (click)="onCourseViewed()">Ver curso</button>
 
 </div>
