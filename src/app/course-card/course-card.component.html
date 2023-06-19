@@ -3,6 +3,7 @@
     <div class="course-title">
         {{ cardIndex + ' ' + curso.description }}
     </div>
+
     <img width="300" alt="Angular Logo" *ngIf="curso.iconUrl else noImg;"
          [src]="curso.iconUrl">
 
@@ -14,12 +15,19 @@
         {{ curso.longDescription }}
     </div>
 
+    <div class="course-category" [ngSwitch]="curso.category">
+        <div class="category" *ngSwitchCase="'BEGINNER'">Principiante</div>
+        <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermedio</div>
+        <div class="category" *ngSwitchCase="'ADVANCED'">Avanzado</div>
+        <div class="category" *ngSwitchDefault="">Todos los niveles</div>
+    </div>
+
+    <button (click)="onCourseViewed()">Ver curso</button>
+
     <!-- 
         eventos nativos de navegador propagan el evento (bubble) ej: (click)
         eventos personalizados no propagan nada ej: onCourseViewed
         <button (click)="onClick()">evento click (bubble)</button>
-    -->
-    
-    <button (click)="onCourseViewed()">Ver curso</button>
+    -->    
 
 </div>
