@@ -1,8 +1,5 @@
 <div class="top-menu">
-
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-
+    <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
 
@@ -28,6 +25,19 @@
      [class.is-last]="esUltimo"
      (courseSelected)="onCourseSelected($event)">
     </course-card>
+
+</div>
+
+<div class="demo">
+    <h2>Pipes</h2>
+
+    <h3>keyvalue</h3>
+    <div *ngFor="let clave_valor of angularCore | keyvalue">
+        {{ clave_valor.key }} : {{clave_valor.value}}
+    </div>
+
+    <h3>json</h3>
+    {{ angularCore | json }}
 
 </div>
 
